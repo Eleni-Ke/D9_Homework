@@ -162,12 +162,12 @@ function upperFirst(str) {
     if (typeof str === "string") {
         let arrayOfStr = str.split(" ");
         for (let i = 0; i < arrayOfStr.length; i++) {
-            
-            str = arrayOfStr.join(" ");
-        }
+            arrayOfStr[i] = arrayOfStr[i][0].toUpperCase() + arrayOfStr[i].substring(1);
+         }
+        str = arrayOfStr.join(" ");
         return str;
     } else {
-        return "The parameter is not a string!"
+    return "The parameter is not a string!"
     }
 }
 let allWordsStartCapital = upperFirst(string3);
@@ -181,17 +181,35 @@ printTitle("Exercice 9");
 
 function cutString(str) {
     if (typeof str === "string") {
-
+        let strArray = str.split("");
+        strArray.splice(0, 1);
+        strArray.pop();
+        str = strArray.join("");
+        return str;
     } else {
         return "The parameter is not a string!"
     }
 }
+let newString = cutString(string3);
+console.log(newString);
+
 
 /* EXERCISE 10
  Write a function called "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10.
 */
 
-/* WRITE YOUR ANSWER HERE */
+printTitle("Exercice 10");
+
+function giveMeRandom(n) {
+    let randomNumbers = [];
+    let i = 0
+    while (i < n) {
+        randomNumbers.push(Math.floor(Math.random() * 11));
+        i++;
+    }
+    return randomNumbers;
+}
+console.log(giveMeRandom(2));
 
 /* WHEN YOU ARE FINISHED
  Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today's Eduflow.
