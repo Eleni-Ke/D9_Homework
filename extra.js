@@ -1,11 +1,39 @@
 // Additional assignments for Day 5
 
+function printTitle(titleString) {
+    console.log(`\n---------- ${titleString} ----------\n`);
+  }
+
 /* EXTRA 1
  Write a function called "checkArray" which receives an array of random numbers (created with giveMeRandom) and prints, for each item, whether it's bigger than 5 or not.
  The function should return the sum of just the numbers bigger than 5.
 */
 
-/* WRITE YOUR ANSWER HERE */
+printTitle("Extra 1");
+
+function giveMeRandom(n) {
+    let randomNumbers = [];
+    let i = 0
+    while (i < n) {
+        randomNumbers.push(Math.floor(Math.random() * 11));
+        i++;
+    }
+    return randomNumbers;
+}
+
+function checkArray(arr) {
+    let sumOfNumBiggerThan5 = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 5) {
+            sumOfNumBiggerThan5 += arr[i];
+        }
+        
+    }
+    return sumOfNumBiggerThan5;
+}
+
+let sumOfNumbers = checkArray(giveMeRandom(4));
+console.log(sumOfNumbers);
 
 /* EXTRA 2
  In your eCommerce you have an array of objects called shoppingCart. Each one of these objects has a price, a name, an id and the quantity to be shipped.
