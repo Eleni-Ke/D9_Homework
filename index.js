@@ -52,16 +52,17 @@ console.log(`This is the crazy sum: ${thisIsACrazySum}`);
 printTitle("Exercice 3");
 
 function crazyDiff(int) {
-    let diff = Math.abs(int, 19);
+    let diff = Math.abs(int - 19);
+    console.log(diff)
     if (diff > 19) {
         return diff * 3;
     } else {
         return "The absolute difference is smaller than 19.";
     }
 }
-let thisIsACrazyDiff = crazyDiff(123);
+let thisIsACrazyDiff = crazyDiff(129);
 
-console.log(`Thisis the crazy difference: ${thisIsACrazyDiff}`);
+console.log(`This is the crazy difference: ${thisIsACrazyDiff}`);
 
 /* EXERCISE 4
  Write a function called "boundary" which accept an integer parameter n and returns true if n is within 20 and 100 (included) or if n it's equal to 400.
@@ -101,7 +102,8 @@ function strivify(string1) {
     }
     
 }
-let IAmStrivified = strivify(45);
+let string2 = "I am a string";
+let IAmStrivified = strivify(string2);
 
 console.log(`This is a strivified string: ${IAmStrivified}`);
 
@@ -154,13 +156,40 @@ console.log(`If you reverse ${string3} you get ${reverseString(string3)}.`);
  Write a function called "upperFirst" which capitalizes the first letter of each word of a given string passed as a parameter.
 */
 
+printTitle("Exercice 8");
 
+function upperFirst(str) {
+    if (typeof str === "string") {
+        let arrayOfStr = str.split(" ");
+        for (let i = 1; i < arrayOfStr.length; i++) {
+            for (let j = 0; j < 1; j++) {
+                arrayOfStr[i][j] = arrayOfStr[i][j].toUpperCase();
+                
+            }
+            //arrayOfStr[i][0] = arrayOfStr[i][0].toUpperCase()
+            str = arrayOfStr.join();
+        }
+        return str;
+    } else {
+        return "The parameter is not a string!"
+    }
+}
+let allWordsStartCapital = upperFirst(string3);
+console.log(allWordsStartCapital);
 
 /* EXERCISE 9
  Write a function called "cutString" which creates a new string without the first and last character of a given string passed as a parameter.
 */
 
-/* WRITE YOUR ANSWER HERE */
+printTitle("Exercice 9");
+
+function cutString(str) {
+    if (typeof str === "string") {
+
+    } else {
+        return "The parameter is not a string!"
+    }
+}
 
 /* EXERCISE 10
  Write a function called "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10.
