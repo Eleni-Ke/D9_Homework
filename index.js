@@ -102,7 +102,7 @@ function strivify(string1) {
     }
     
 }
-let string2 = "I am a string";
+let string2 = "StriveI am a string";
 let IAmStrivified = strivify(string2);
 
 console.log(`This is a strivified string: ${IAmStrivified}`);
@@ -161,13 +161,9 @@ printTitle("Exercice 8");
 function upperFirst(str) {
     if (typeof str === "string") {
         let arrayOfStr = str.split(" ");
-        for (let i = 1; i < arrayOfStr.length; i++) {
-            for (let j = 0; j < 1; j++) {
-                arrayOfStr[i][j] = arrayOfStr[i][j].toUpperCase();
-                
-            }
-            //arrayOfStr[i][0] = arrayOfStr[i][0].toUpperCase()
-            str = arrayOfStr.join();
+        for (let i = 0; i < arrayOfStr.length; i++) {
+            
+            str = arrayOfStr.join(" ");
         }
         return str;
     } else {
